@@ -78,11 +78,16 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-1
 1. Intinya, kita perlu atau tidaknya menggunakan interface atau trait dalam pola Observer tergantung pada beragam atau tidaknya jenis observer. Untuk `bambangshop`, jika cuma ada satu tipe observer, yaitu `Subscriber`, kita tidak perlu pakai interface atau trait. Tapi, kalau ke depannya ada tipe observer lain, menggunakan trait bisa lebih memudahkan.
-<br>
+
 2. Lebih baik pakai Dashmap sebab memudahkan kita menghubungkan produk ke subscriber yang berlangganan. Dengan DashMap, kita bisa gampang kaitkan id program dengan url subscriber. Kalau pakai Vec, kita butuh tambahan seperti dua daftar terpisah buat simpan id program dan url, yang bisa bikin repot saat atur atau update data.
-<br>
+
 3. Untuk keamanan pemrograman dengan multithreading Rust, DashMap sudah pilihan bagus karena sudah disesuaikan untuk lingkungan dengan banyak multithread. DashMap memastikan kita bisa atur daftar SUBSCRIBERS dengan aman dan efisien, walaupun banyak thread yang bekerja bersamaan. Walaupun pola Singleton bisa jamin cuma ada satu objek yang ada, itu belum tentu aman dari thread seperti yang bisa DashMap atasi. Dengan DashMap, kita bisa yakin daftar subscriber kita aman dan dikelola dengan efektif meski di thread-safe.
 
 #### Reflection Publisher-2
+1. Dalam desain MVC, kita pisahkan Service dan Repository agar setiap bagian hanya punya satu prinsip single responsibility. Service itu untuk atur logika bisnis dan olah data dari Repository, sedangkan Repository itu untuk bantu akses dan atur data di database. Karena dibagi begitu, kode kita jadi lebih rapi, gampang dimengerti, dan gampang di refactor.
+
+2. Kalau kita cuma pakai Model tanpa Service atau Repository, nanti bagian-bagian kode kita terlalu bergantung satu sama lain. Ini bikin susah pas mau ubah-ubah kode, karena setiap perubahan di Model bakal pengaruhi semua kode lain. Ini malah bikin kode kita jadi lebih rumit dan kurang fleksibel buat dikembangin atau direfactor.
+
+3. Postman itu alat yang keren buat cek dan pastiin kalau aplikasi yang kita buat itu bekerja dengan benar. Pake Postman, kita bisa kirim permintaan HTTP ke tempat-tempat yang berbeda di aplikasi kita dan lihat jawabannya untuk cek data itu bener dan sama. Bisa juga tes fitur dasar kayak bikin, baca, update, sama hapus data. Gampangnya atur permintaan dan langsung lihat jawabannya itu membantu banget buat cepet-cepet tes dan perbaiki aplikasi kita.
 
 #### Reflection Publisher-3
