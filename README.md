@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Intinya, kita perlu atau tidaknya menggunakan interface atau trait dalam pola Observer tergantung pada beragam atau tidaknya jenis observer. Untuk `bambangshop`, jika cuma ada satu tipe observer, yaitu `Subscriber`, kita tidak perlu pakai interface atau trait. Tapi, kalau ke depannya ada tipe observer lain, menggunakan trait bisa lebih memudahkan.
+<br>
+2. Lebih baik pakai Dashmap sebab memudahkan kita menghubungkan produk ke subscriber yang berlangganan. Dengan DashMap, kita bisa gampang kaitkan id program dengan url subscriber. Kalau pakai Vec, kita butuh tambahan seperti dua daftar terpisah buat simpan id program dan url, yang bisa bikin repot saat atur atau update data.
+<br>
+3. Untuk keamanan pemrograman dengan multithreading Rust, DashMap sudah pilihan bagus karena sudah disesuaikan untuk lingkungan dengan banyak multithread. DashMap memastikan kita bisa atur daftar SUBSCRIBERS dengan aman dan efisien, walaupun banyak thread yang bekerja bersamaan. Walaupun pola Singleton bisa jamin cuma ada satu objek yang ada, itu belum tentu aman dari thread seperti yang bisa DashMap atasi. Dengan DashMap, kita bisa yakin daftar subscriber kita aman dan dikelola dengan efektif meski di thread-safe.
 
 #### Reflection Publisher-2
 
