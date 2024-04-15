@@ -91,3 +91,9 @@ This is the place for you to write reflections:
 3. Postman itu alat yang keren buat cek dan pastiin kalau aplikasi yang kita buat itu bekerja dengan benar. Pake Postman, kita bisa kirim permintaan HTTP ke tempat-tempat yang berbeda di aplikasi kita dan lihat jawabannya untuk cek data itu bener dan sama. Bisa juga tes fitur dasar kayak bikin, baca, update, sama hapus data. Gampangnya atur permintaan dan langsung lihat jawabannya itu membantu banget buat cepet-cepet tes dan perbaiki aplikasi kita.
 
 #### Reflection Publisher-3
+
+1. Di tutorial ini, kita pakai cara push dari Observer Pattern. Ini artinya, setiap ada perubahan pada objek, seperti dibuat, dihapus, atau diperbarui, layanan notifikasi otomatis kasih tau semua subscriber tentang perubahan itu.
+
+2. Kalau metode pull yang dipakai, setiap subscriber harus sendiri cek ada atau tidak perubahan data yang penting buat mereka. Ini bagus karena mereka yang subscribe yang atur kapan mau ambil data. Tapi, kelemahannya, mereka harus tahu banyak tentang data asalnya buat bisa melakukan ini.
+
+3. Kalau kita pilih buat engga pakai multi-threading saat memberi notifikasi, bisa jadi ada delay waktu `NotificationService` perlu kasih tau setiap subscriber. Ini bisa bikin antrean jadi panjang kalau pelanggannya banyak, dan jadinya pengiriman notifikasi bisa lambat karena komputasi kita punya batasan.
